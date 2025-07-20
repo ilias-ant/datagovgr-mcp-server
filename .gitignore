@@ -1,0 +1,10 @@
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+.vscode/
+.env
+.venv/
+.DS_Store
+.cursor/
+.cursorrules
+.cursorignore
