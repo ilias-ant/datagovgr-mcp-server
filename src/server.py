@@ -1,23 +1,51 @@
-from typing import Optional
+from typing import Annotated, Optional
 
 from fastmcp import FastMCP
+from pydantic import Field
 
 mcp = FastMCP("data.gov.gr MCP Server")
 
 
 @mcp.tool
 def get_dataset(
-    dataset: str, date_from: Optional[str] = None, date_to: Optional[str] = None
+    dataset: Annotated[
+        str, Field(description="The dataset name from https://data.gov.gr")
+    ],
+    date_from: Annotated[
+        Optional[str],
+        Field(description="Start date (YYYY-MM-DD)", example="2025-01-01"),
+    ] = None,
+    date_to: Annotated[
+        Optional[str], Field(description="End date (YYYY-MM-DD)", example="2025-01-31")
+    ] = None,
+    download: Annotated[
+        bool, Field(description="Whether to download the dataset", example=False)
+    ] = False,
+    type_: Annotated[
+        Optional[str],
+        Field(
+            description="In which format to download the dataset - this is only available for download=True",
+            example="json",
+        ),
+    ] = None,
 ):
-    """Get a dataset from the data.gov.gr API."""
+    """Get a dataset from the https://data.gov.gr API."""
     from pydatagovgr import DataGovClient
 
     gov = DataGovClient()
 
-    if date_from is None or date_to is None:
-        return gov.query(dataset)
-    else:
-        return gov.query(dataset, date_from=date_from, date_to=date_to)
+    params = {}
+
+    if date_from:
+        params["date_from"] = date_from
+    if date_to:
+        params["date_to"] = date_to
+    if download:
+        dataset = f"download/{dataset}"
+    if type_:
+        params["type"] = type_
+
+    return gov.query(dataset, **params)
 
 
 if __name__ == "__main__":
