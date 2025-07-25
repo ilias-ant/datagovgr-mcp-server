@@ -11,5 +11,5 @@ from src.server import mcp
 async def test_get_dataset(mock_query):
     mock_query.return_value = {"data": "yes"}
     async with Client(mcp) as client:
-        result = await client.call_tool("get_dataset", {})
+        result = await client.call_tool("get_dataset", {"dataset": "mindev_realtors"})
         assert result.data == {"data": "yes"}

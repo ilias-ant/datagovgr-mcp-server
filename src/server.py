@@ -13,19 +13,30 @@ def get_dataset(
     ],
     date_from: Annotated[
         Optional[str],
-        Field(description="Start date (YYYY-MM-DD)", example="2025-01-01"),
+        Field(
+            description="Start date (YYYY-MM-DD)",
+            json_schema_extra={"example": "2025-01-01"},
+        ),
     ] = None,
     date_to: Annotated[
-        Optional[str], Field(description="End date (YYYY-MM-DD)", example="2025-01-31")
+        Optional[str],
+        Field(
+            description="End date (YYYY-MM-DD)",
+            json_schema_extra={"example": "2025-01-31"},
+        ),
     ] = None,
     download: Annotated[
-        bool, Field(description="Whether to download the dataset", example=False)
+        bool,
+        Field(
+            description="Whether to download the dataset",
+            json_schema_extra={"example": False},
+        ),
     ] = False,
     type_: Annotated[
         Optional[str],
         Field(
             description="In which format to download the dataset - this is only available for download=True",
-            example="json",
+            json_schema_extra={"example": "json"},
         ),
     ] = None,
 ):
@@ -49,4 +60,4 @@ def get_dataset(
 
 
 if __name__ == "__main__":
-    mcp.run(transport="http", host="127.0.0.1", port=8000)
+    mcp.run(transport="http", host="0.0.0.0", port=8000)
