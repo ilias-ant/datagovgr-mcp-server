@@ -1,12 +1,12 @@
 [project]
 name = "datagovgr-mcp-server"
-version = "0.1.0"
+version = "0.1.1"
 description = "An MCP server for the data.gov.gr API."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "fastmcp>=2.10.6",
-    "pydatagovgr>=1.0.0",
+    "pydatagovgr>=1.0.1",
 ]
 
 [dependency-groups]

@@ -38,7 +38,11 @@ Assuming that the MCP Server is running on [http://0.0.0.0:8000/mcp/](http://0.0
 Some indicative prompts that you can try are the following:
 
 ```text
-Fetch me the internet traffic dataset from data.gov.gr. I want data from 21/06 until 24/07 for 2025. Download them as CSV as well, in a newly created directory called datagovgr_datasets
+Fetch me the internet_traffic dataset from data.gov.gr - I want data from the 1st of May until 24/07 of 2025
+```
+
+```text
+Download the ekt-expenses-source dataset from data.gov.gr, in CSV form
 ```
 
 ### Connect to Cursor
@@ -54,7 +58,7 @@ Assuming that the localhost MCP Server is running on http://127.0.0.1:8000:
 {
   "mcpServers": {
     "data.gov.gr MCP Server": {
-      "url": "http://0.0.0.0:8000/mcp"
+      "url": "http://0.0.0.0:8000/mcp/"
     }
   }
 }

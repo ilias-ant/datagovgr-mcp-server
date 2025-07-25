@@ -196,7 +196,7 @@ wheels = [
 
 [[package]]
 name = "datagovgr-mcp-server"
-version = "0.1.0"
+version = "0.1.1"
 source = { virtual = "." }
 dependencies = [
     { name = "fastmcp" },
@@ -212,7 +212,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "fastmcp", specifier = ">=2.10.6" },
-    { name = "pydatagovgr", specifier = ">=1.0.0" },
+    { name = "pydatagovgr", specifier = ">=1.0.1" },
 ]
 
 [package.metadata.requires-dev]
@@ -545,14 +545,14 @@ wheels = [
 
 [[package]]
 name = "pydatagovgr"
-version = "1.0.0"
+version = "1.0.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "requests" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/20/da/5248f3754ffd8042594ed5f0792223c9b31d052921c0c8fdfaaa89b30b80/pydatagovgr-1.0.0.tar.gz", hash = "sha256:06c43c537f47116fbaa7163f87d7ca13dccd310310590df1e3db8c1f05f91823", size = 6274, upload-time = "2025-07-19T22:28:04.171Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/87/40/abee9070800383966e447c64ebbc79b440be5b184a075539beb85a55cc02/pydatagovgr-1.0.1.tar.gz", hash = "sha256:a8958f9638c8a79dd13563497894e7c34d52d7839f90ff3166a2bb818853c24f", size = 6389, upload-time = "2025-07-25T14:53:48.894Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/85/d5/c2f362e5d5f5986cdf0fb79b118a0b2c207bea125ee3f2939618a005c0a1/pydatagovgr-1.0.0-py3-none-any.whl", hash = "sha256:c7a480dad8657688952c922f8621f1f89e3973a7d2ec0adb17afad3e56d091bd", size = 8041, upload-time = "2025-07-19T22:28:03.097Z" },
+    { url = "https://files.pythonhosted.org/packages/e3/46/c09f56d55094bf61388bacd7041f5d53a4a1539e032d6ebb40d95a738562/pydatagovgr-1.0.1-py3-none-any.whl", hash = "sha256:30ca4094d0f8e6b743ef9066d27bb07c62cc417454f7af6a743cc9a6d072fbcb", size = 8098, upload-time = "2025-07-25T14:53:46.434Z" },
 ]
 
 [[package]]

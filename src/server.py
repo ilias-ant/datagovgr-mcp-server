@@ -14,28 +14,28 @@ def get_dataset(
     date_from: Annotated[
         Optional[str],
         Field(
-            description="Start date (YYYY-MM-DD)",
+            description="Start date (YYYY-MM-DD) - not all datasets require this.",
             json_schema_extra={"example": "2025-01-01"},
         ),
     ] = None,
     date_to: Annotated[
         Optional[str],
         Field(
-            description="End date (YYYY-MM-DD)",
+            description="End date (YYYY-MM-DD) - not all datasets require this.",
             json_schema_extra={"example": "2025-01-31"},
         ),
     ] = None,
     download: Annotated[
         bool,
         Field(
-            description="Whether to download the dataset",
+            description="Whether to download the dataset. Use this only if user asks for a download.",
             json_schema_extra={"example": False},
         ),
     ] = False,
     type_: Annotated[
         Optional[str],
         Field(
-            description="In which format to download the dataset - this is only available for download=True",
+            description="In which format to download the dataset - this is only available for download=true",
             json_schema_extra={"example": "json"},
         ),
     ] = None,
